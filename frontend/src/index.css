@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Normalize common vertical spacing to avoid inconsistent gaps
+   caused by default browser styles on headings, lists and form controls. */
+h1,h2,h3,h4,h5,h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem; /* consistent, modest spacing */
+}
+
+/* Make form controls stack and have consistent spacing instead of
+   relying on <br/> tags. This keeps markup unchanged but reduces
+   unexpected gaps. */
+form input, form button, form textarea, input, button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 8px 0; /* modest vertical spacing */
+}
+
+/* Tidy up lists used for tasks */
+ul {
+  padding-left: 20px;
+  margin-top: 0;
+}
+
+ul li {
+  margin-bottom: 12px;
+}
+
+/* If br tags are present, reduce their visual height to avoid
+   double spacing when inputs already have margins. */
+br {
+  line-height: 0.35;
+}

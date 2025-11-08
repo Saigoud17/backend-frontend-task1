@@ -1,0 +1,633 @@
+{
+	"info": {
+		"_postman_id": "5a105da1-0712-4df7-af63-aa51407d55ae",
+		"name": "Task Management API - Sai Kiran Goud",
+		"description": "This collection includes all API endpoints for authentication and task management, built using Node.js, Express, and PostgreSQLEndFragment.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27723129"
+	},
+	"item": [
+		{
+			"name": "Register user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Sai Kiran Goud\",\r\n  \"email\": \"saikiran@example.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f2-XfW3We0MgR9hupMJB2yJ2hglOZ8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Nov 2025 14:58:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully\",\n    \"user\": {\n        \"id\": \"78e100d3-942f-40d5-b73e-2c797d951a02\",\n        \"name\": \"Sai Kiran Goud\",\n        \"email\": \"saikiran@example.com\",\n        \"role\": \"user\",\n        \"updatedAt\": \"2025-11-08T14:58:42.472Z\",\n        \"createdAt\": \"2025-11-08T14:58:42.472Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"saikiran@example.com\",\r\n  \"password\": \"12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "446"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1be-nbnpO6vX2XLh+KaCEkJQywXvWvA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Nov 2025 15:00:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4ZTEwMGQzLTk0MmYtNDBkNS1iNzNlLTJjNzk3ZDk1MWEwMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyNjE0MDQyLCJleHAiOjE3NjI2MjEyNDJ9.e6CO45gMQiYwwE5e-RIZbLRgk4cSrDejk0mEpcFbgCU\",\n    \"user\": {\n        \"id\": \"78e100d3-942f-40d5-b73e-2c797d951a02\",\n        \"name\": \"Sai Kiran Goud\",\n        \"email\": \"saikiran@example.com\",\n        \"role\": \"user\",\n        \"createdAt\": \"2025-11-08T14:58:42.472Z\",\n        \"updatedAt\": \"2025-11-08T14:58:42.472Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "GetMyTask",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4ZTEwMGQzLTk0MmYtNDBkNS1iNzNlLTJjNzk3ZDk1MWEwMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyNjE0MDQyLCJleHAiOjE3NjI2MjEyNDJ9.e6CO45gMQiYwwE5e-RIZbLRgk4cSrDejk0mEpcFbgCU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Nov 2025 15:04:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				}
+			]
+		},
+		{
+			"name": "CreateTask",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4ZTEwMGQzLTk0MmYtNDBkNS1iNzNlLTJjNzk3ZDk1MWEwMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyNjE0MDQyLCJleHAiOjE3NjI2MjEyNDJ9.e6CO45gMQiYwwE5e-RIZbLRgk4cSrDejk0mEpcFbgCU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Complete Backend Assignment\",\r\n  \"description\": \"Finalize Swagger, Postman, and scalability documentation.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"tasks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "347"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15b-Z0w4E5c47c6OtZcwb1r8jGyFydI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Nov 2025 15:07:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Task created successfully\",\n    \"task\": {\n        \"id\": \"bf0c93ff-f898-4135-b6b4-15c2c5d76309\",\n        \"status\": \"todo\",\n        \"title\": \"Complete Backend Assignment\",\n        \"description\": \"Finalize Swagger, Postman, and scalability documentation.\",\n        \"user_id\": \"78e100d3-942f-40d5-b73e-2c797d951a02\",\n        \"updatedAt\": \"2025-11-08T15:07:20.686Z\",\n        \"createdAt\": \"2025-11-08T15:07:20.686Z\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "UpdateTask",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4ZTEwMGQzLTk0MmYtNDBkNS1iNzNlLTJjNzk3ZDk1MWEwMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyNjE0MDQyLCJleHAiOjE3NjI2MjEyNDJ9.e6CO45gMQiYwwE5e-RIZbLRgk4cSrDejk0mEpcFbgCU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Complete Backend Assignment (Updated)\",\r\n  \"description\": \"Added Postman and scalability documentation sections.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/api/v1/tasks/bf0c93ff-f898-4135-b6b4-15c2c5d76309",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"bf0c93ff-f898-4135-b6b4-15c2c5d76309"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "353"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"161-nRcMLiyx6CxXd9JTJdCUYDNDrOo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Nov 2025 15:10:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Task updated successfully\",\n    \"task\": {\n        \"id\": \"bf0c93ff-f898-4135-b6b4-15c2c5d76309\",\n        \"title\": \"Complete Backend Assignment (Updated)\",\n        \"description\": \"Added Postman and scalability documentation sections.\",\n        \"status\": \"todo\",\n        \"createdAt\": \"2025-11-08T15:07:20.686Z\",\n        \"updatedAt\": \"2025-11-08T15:10:49.707Z\",\n        \"user_id\": \"78e100d3-942f-40d5-b73e-2c797d951a02\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4ZTEwMGQzLTk0MmYtNDBkNS1iNzNlLTJjNzk3ZDk1MWEwMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyNjE0MDQyLCJleHAiOjE3NjI2MjEyNDJ9.e6CO45gMQiYwwE5e-RIZbLRgk4cSrDejk0mEpcFbgCU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/tasks/bf0c93ff-f898-4135-b6b4-15c2c5d76309",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"bf0c93ff-f898-4135-b6b4-15c2c5d76309"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-urf4l4W7aUjEqcMghGgrIBDtf0M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Nov 2025 15:12:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Task deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "IncompleteTask",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4ZTEwMGQzLTk0MmYtNDBkNS1iNzNlLTJjNzk3ZDk1MWEwMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyNjE0MDQyLCJleHAiOjE3NjI2MjEyNDJ9.e6CO45gMQiYwwE5e-RIZbLRgk4cSrDejk0mEpcFbgCU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/tasks/incomplete",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"incomplete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Nov 2025 15:14:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[]"
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4ZTEwMGQzLTk0MmYtNDBkNS1iNzNlLTJjNzk3ZDk1MWEwMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzYyNjE0MDQyLCJleHAiOjE3NjI2MjEyNDJ9.e6CO45gMQiYwwE5e-RIZbLRgk4cSrDejk0mEpcFbgCU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4001/api/v1/tasks/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"api",
+								"v1",
+								"tasks",
+								"all"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-WfxJWPvrigTFp6OymprQ6xABFVk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Nov 2025 15:17:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Access denied: Admins only\"\n}"
+				}
+			]
+		}
+	]
+}

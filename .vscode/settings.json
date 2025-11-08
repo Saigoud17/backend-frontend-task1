@@ -1,0 +1,23 @@
+{
+  // Keep aggressive editor behaviors off at workspace root to prevent
+  // accidental JSX/HTML auto-spacing or auto-formatting across projects.
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.defaultFormatter": null,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "prettier.enable": false,
+  "eslint.enable": false,
+
+  "html.autoClosingTags": false,
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoSurround": "never",
+
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "emmet.triggerExpansionOnTab": false,
+  "editor.codeActionsOnSave": {},
+  "files.trimTrailingWhitespace": true
+}

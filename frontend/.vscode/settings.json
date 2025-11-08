@@ -1,0 +1,25 @@
+{
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.defaultFormatter": null,
+  "javascript.format.enable": false,
+  "typescript.format.enable": false,
+  "prettier.enable": false,
+  "eslint.enable": false,
+  // Disable auto-closing/auto-surround features which can introduce stray
+  // spaces or weird edits in JSX when combined with extensions.
+  "html.autoClosingTags": false,
+  "editor.autoClosingBrackets": "never",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoSurround": "never",
+  // Make suggestions less aggressive so accidental accepts don't inject text
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  // Emmet can sometimes expand abbreviations in JSX; disable tab expansion here.
+  "emmet.triggerExpansionOnTab": false,
+  // Prevent auto-formatting by extensions on save/actions
+  "editor.codeActionsOnSave": {},
+  // Trim trailing whitespace to avoid accidental spaces at line ends
+  "files.trimTrailingWhitespace": true
+}
