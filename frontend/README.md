@@ -56,7 +56,7 @@ Copy code
 🚀 Server running on port 4001
 🌐 API Documentation (Swagger)
 Swagger UI is available at:
-👉 http://localhost:4001/api-docs
+👉 https://backend-frontend-task1.onrender.com/api-docs
 
 This provides complete documentation of all available routes and request/response formats.
 
