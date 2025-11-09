@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
+const API_URL = process.env.REACT_APP_API_URL || "https://backend-frontend-task1.onrender.com";
+
 const Login = () => {
     const [form, setForm] = useState({ email: "", password: "" });
     const navigate = useNavigate();
@@ -16,7 +18,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:4001/api/v1/auth/login", form);
+            const res = await axios.post(`${API_URL}/api/v1/auth/login`, form);
             localStorage.setItem("token", res.data.token);
             alert("✅ Login successful!");
             navigate("/dashboard");

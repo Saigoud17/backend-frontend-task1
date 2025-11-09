@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
+const API_URL = process.env.REACT_APP_API_URL || "https://backend-frontend-task1.onrender.com";
+
 const Register = () => {
     const [form, setForm] = useState({ name: "", email: "", password: "" });
     const navigate = useNavigate();
@@ -16,7 +18,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:4001/api/v1/auth/register", form);
+            await axios.post(`${API_URL}/api/v1/auth/register`, form);
             alert("🎉 Registered successfully! Please login.");
             navigate("/login");
         } catch (err) {
